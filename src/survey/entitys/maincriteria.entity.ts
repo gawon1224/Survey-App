@@ -2,8 +2,8 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class MainCriteria extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  user_id: number;
+  @PrimaryGeneratedColumn('uuid')
+  user_id: string;
 
   @Column()
   q1: number;

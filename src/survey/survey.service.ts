@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { CreateSurveyDto } from './dto/create-survey.dto';
-import { MainCriteria } from './maincriteria.entity';
+import { MainCriteria } from './entitys/maincriteria.entity';
 import { SurveyRepository } from './survey.repository';
 
 @Injectable()

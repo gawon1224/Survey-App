@@ -6,7 +6,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { CreateSurveyDto } from './dto/create-survey.dto';
-import { MainCriteria } from './maincriteria.entity';
+import { MainCriteria } from './entitys/maincriteria.entity';
 import { SurveyService } from './survey.service';
 
 @Controller('survey')

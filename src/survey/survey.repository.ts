@@ -1,7 +1,7 @@
 import { CustomRepository } from 'src/db/typeorm-ex.decorator';
 import { Repository } from 'typeorm';
 import { CreateSurveyDto } from './dto/create-survey.dto';
-import { MainCriteria } from './maincriteria.entity';
+import { MainCriteria } from './entitys/maincriteria.entity';
 
 @CustomRepository(MainCriteria)
 export class SurveyRepository extends Repository<MainCriteria> {
