@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSurveyDto } from './dto/create-survey.dto';
+import { CreateMainCriteriaSurveyDto } from './dtos/create-main-criteria-survey.dto';
 import { MainCriteria } from './entitys/maincriteria.entity';
 import { SurveyRepository } from './survey.repository';
 
@@ -7,7 +7,11 @@ import { SurveyRepository } from './survey.repository';
 export class SurveyService {
   constructor(private surveyRepository: SurveyRepository) {}
 
-  createSurvey(createSurveyDto: CreateSurveyDto): Promise<MainCriteria> {
-    return this.surveyRepository.createSurvey(createSurveyDto);
+  createSurvey(
+    createMainCriteriaSurveyDto: CreateMainCriteriaSurveyDto,
+  ): Promise<MainCriteria> {
+    return this.surveyRepository.createMainCriteriaSurvey(
+      createMainCriteriaSurveyDto,
+    );
   }
 }

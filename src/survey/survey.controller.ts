@@ -5,7 +5,7 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { CreateSurveyDto } from './dto/create-survey.dto';
+import { CreateMainCriteriaSurveyDto } from './dtos/create-main-criteria-survey.dto';
 import { MainCriteria } from './entitys/maincriteria.entity';
 import { SurveyService } from './survey.service';
 
@@ -15,8 +15,8 @@ export class SurveyController {
   @Post()
   @UsePipes(ValidationPipe)
   createSurvey(
-    @Body() createSurveyDto: CreateSurveyDto,
+    @Body() createMainCriteriaSurveyDto: CreateMainCriteriaSurveyDto,
   ): Promise<MainCriteria> {
-    return this.surveyService.createSurvey(createSurveyDto);
+    return this.surveyService.createSurvey(createMainCriteriaSurveyDto);
   }
 }

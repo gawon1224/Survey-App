@@ -1,12 +1,14 @@
 import { CustomRepository } from 'src/db/typeorm-ex.decorator';
 import { Repository } from 'typeorm';
-import { CreateSurveyDto } from './dto/create-survey.dto';
+import { CreateMainCriteriaSurveyDto } from './dtos/create-main-criteria-survey.dto';
 import { MainCriteria } from './entitys/maincriteria.entity';
 
 @CustomRepository(MainCriteria)
 export class SurveyRepository extends Repository<MainCriteria> {
-  async createSurvey(createSurveyDto: CreateSurveyDto): Promise<MainCriteria> {
-    const { user_id, q1, q2, q3 } = createSurveyDto;
+  async createMainCriteriaSurvey(
+    createMainCriteriaSurveyDto: CreateMainCriteriaSurveyDto,
+  ): Promise<MainCriteria> {
+    const { user_id, q1, q2, q3 } = createMainCriteriaSurveyDto;
 
     const survey = this.create({
       user_id,
