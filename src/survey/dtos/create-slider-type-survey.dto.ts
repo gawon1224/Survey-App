@@ -2,11 +2,17 @@ import { IsNotEmpty } from 'class-validator';
 import { OneToOne, JoinColumn } from 'typeorm';
 import { User } from '../entitys/user.entity';
 
-export class CreateMainCriteriaSurveyDto {
-  user_id: string;
+export class CreateSliderTypeSurveyDto {
+  userId: string;
 
   @IsNotEmpty()
-  q1: number;
+  mainCriteriaId: number;
+
+  @IsNotEmpty()
+  subCriteriaId: number;
+
+  @IsNotEmpty()
+  subCriteriaScore: number;
 
   @OneToOne(() => User)
   @JoinColumn({ name: 'user_id' })
